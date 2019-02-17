@@ -5,7 +5,7 @@ ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
-gem 'bootstrap-sass', '3.3.7'
+gem 'foundation-icons-sass-rails' # foundation icon
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -34,7 +34,9 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bootstrap', '~> 4.1.1'
+gem 'foundation-rails'
+gem 'autoprefixer-rails' # 自動でベンダープレフィックスをつけてくれる
+gem 'simple_form' # フォーム簡易作成
 
 gem 'jquery-rails', '4.2.2'
 gem 'bcrypt', '3.1.11'

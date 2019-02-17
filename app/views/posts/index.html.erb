@@ -1,5 +1,12 @@
-<div class="list-group center-block" style="width: 50rem;">
+<div class="grid-x grid-padding-x">
+  <div class="cell small-4"></div>
+  <div class="cell small-4">
+    <h1 class="text-center">つぶやき一覧</h1>
     <% @posts.each do |post| %>
-    <%= link_to(post.content, "/posts/#{post.id}", class: "list-group-item") %>
+    <div class="callout">
+      <%= link_to(post.content, "/posts/#{post.id}") %>
+    </div>
     <% end %>
+  </div>
+  <div class="cell small-4"></div>
 </div>

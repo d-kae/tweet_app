@@ -1,7 +1,19 @@
-<div class="panel panel-default">
+<br>
+<div class="grid-x grid-padding-x">
+	<div class="cell small-4"></div>
+	<div class="cell small-4">
 
-	<div class="panel-body">
-        <%= @post.content %>
+		<div class="card">
+			<div class="card-section">
+				<%= @post.content %>
+			</div>
+		</div>
+		<div class="post-menus">
+			<div class="float-right">
+				<%= link_to("編集", "/posts/#{@post.id}/edit", class: "button") %>
+				<%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post", class: "alert button"}) %>
+			</div>
+		</div>
 	</div>
-
+	<div class="cell small-4"></div>
 </div>
