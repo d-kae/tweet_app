@@ -1,0 +1,5 @@
+<div class="list-group center-block" style="width: 50rem;">
+    <% @posts.each do |post| %>
+    <%= link_to(post.content, "/posts/#{post.id}", class: "list-group-item") %>
+    <% end %>
+</div>

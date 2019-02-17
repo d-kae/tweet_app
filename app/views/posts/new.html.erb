@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <h1>投稿する</h1>
+      <%= form_tag("/posts/create") do %>
+      <% @post.errors.full_messages.each do |message| %>
+        <div class="form-errorß">
+          <%= message %>
+        </div>
+      <% end %>
+      <textarea name="content" class="center-block" rows="4" cols="40"><%= @post.content %></textarea>
+      <br>
+      <input class="pull-right btn-primary" type="submit" value="投稿">
+    <% end %>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+</div>
