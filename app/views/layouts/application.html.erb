@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>TweetApp</title>
-  <%= csrf_meta_tags %>
+  <head>
+    <title>TweetApp</title>
+    <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<body>
-  <%= render 'layouts/header' %>
+  <body>
+    <%= render 'layouts/header' %>
 
-  <% if flash[:notice] %>
-  <div class="flash">
-    <%= flash[:notice] %>
-  </div>
-  <% end %>
-
-  <div class="container">
     <br>
-    <%= yield %>
-  </div>
-</body>
+
+    <% if flash[:notice] %>
+      <div class="grid-x grid-margin-x medium-margin-collapse">
+        <div class="cell small-1"></div>
+        <div class="cell small-10">
+          <div class="callout primary">
+            <span class="badge">！</span>
+            <%= flash[:notice] %>
+          </div>
+        </div>
+        <div class="cell small-1"></div>
+      </div>
+    <% end %>
+
+    <div class="container">
+      <br>
+      <%= yield %>
+    </div>
+  </body>
 
 </html>

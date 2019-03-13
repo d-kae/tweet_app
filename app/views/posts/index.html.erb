@@ -2,11 +2,24 @@
   <div class="cell small-4"></div>
   <div class="cell small-4">
     <h1 class="text-center">つぶやき一覧</h1>
+    <br>
     <% @posts.each do |post| %>
-    <div class="callout">
-      <%= link_to(post.content, "/posts/#{post.id}") %>
-    </div>
+      <div class="callout">
+        <% user = @users.find_by(id: post.user_id) %>
+        <div class="media-object">
+          <div class="media-object-section">
+            <div class="thumbnail">
+              <img src="<%= "/user_images/#{user.image_name}" %>" style="width: 60px;">
+            </div>
+          </div>
+          <div class="media-object-section">
+            <h5><%= link_to(user.name, "/users/#{user.id}", style:"color:#000000;") %></h5>
+            <p><%= link_to(post.content, "/posts/#{post.id}", style:"color:#555555;") %></p>
+            <p style="color:#888888;font-size:12px;"><%= post.updated_at.strftime("%Y-%m-%d %H:%M") %></p>
+          </div>
+        </div>
+      </div>
     <% end %>
+    </div>
+    <div class="cell small-4"></div>
   </div>
-  <div class="cell small-4"></div>
-</div>

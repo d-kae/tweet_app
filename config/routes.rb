@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
 
-  get 'users/index'
-  get 'users/show'
-  get 'users/new'
-  get 'users/edit'
-  get 'users/loginform'
   root "home#top"
+  get "login", to: "users#login_form"
+  post "login", to: "users#login"
+  post "logout", to: "users#logout"
+
+  get 'login', to:"users#loginform"
+  get 'users/index', to:"users#index"
+  get 'signup', to:"users#new"
+  post "users/create", to:"users#create"
+  get 'users/:id/edit', to:"users#edit"
+  post "users/:id/update", to:"users#update"
+  get 'users/:id', to:"users#show"
+
   get "/about", to: "home#about"
 
   get '/posts/index', to: "posts#index"

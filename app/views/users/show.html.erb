@@ -1,2 +1,42 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<br>
+<div class="grid-x grid-padding-x">
+  <div class="cell small-4"></div>
+  <div class="cell small-4">
+
+    <div class="card">
+      <div class="card-section">
+        <div class="text-center">
+          <img src="<%= "/user_images/#{@user.image_name}" %>" style="width:200px;">
+        </div>
+        <br>
+        <p>名前：<%= @user.name %></p>
+        <p>メールアドレス：<%= @user.email %></p>
+      </div>
+    </div>
+    <% if @user.id == @current_user.id %>
+      <div class="float-right">
+        <%= link_to("編集", "/users/#{@user.id}/edit", class: "button") %>
+      </div>
+    <% end %>
+
+    <div style="margin-top: 100px">
+      <% @user.posts.each do |post| %>
+        <div class="callout">
+          <div class="media-object">
+            <div class="media-object-section">
+              <div class="thumbnail">
+                <img src="<%= "/user_images/#{@user.image_name}" %>" style="width: 60px;">
+              </div>
+            </div>
+            <div class="media-object-section">
+              <h5><%= @user.name %></h5>
+              <p><%= link_to(post.content, "/posts/#{post.id}", style:"color:#555555;") %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="cell small-4"></div>
+</div>

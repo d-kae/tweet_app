@@ -1,2 +1,21 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="grid-x grid-padding-x">
+  <div class="cell small-4"></div>
+  <div class="cell small-4">
+    <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+    <% @user.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+    <p>ユーザー名</p>
+    <input type="text" name="name" value="<%= @user.name %>">
+    <p>メールアドレス</p>
+    <input type="email" name="email" value="<%= @user.email %>">
+    <br>
+    <p>画像</p>
+    <input type="file" name="image">
+
+    <input type="submit" class="button primary float-right" value="保存">
+  </div>
+  <div class="cell small-4"></div>
+</div>
+
+<% end %>
