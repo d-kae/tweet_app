@@ -1,4 +1,4 @@
-<div class="top-bar">
+<div class="top-bar" style="background: #ffffff;">
   <div class="top-bar-left">
     <% if @current_user %>
       <%= link_to("Tweet App", "/posts/index", id: "logo") %>
@@ -7,7 +7,7 @@
     <% end %>
   </div>
   <div class="top-bar-right">
-    <ul class="menu">
+    <ul class="menu" style="background: #ffffff;">
       <% if @current_user %>
         <li>
           <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
