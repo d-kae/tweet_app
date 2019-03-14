@@ -17,3 +17,10 @@
   border-color: #cccccc;
   color: black;
 }
+
+.background {
+  background-image: image-url("top_background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,11 @@
+<% if @error_message %>
+  <div class="grid-x grid-margin-x medium-margin-collapse">
+    <div class="cell small-1"></div>
+    <div class="cell small-10">
+      <div class="callout alert">
+        <%= @error_message %>
+      </div>
+    </div>
+  <div class="cell small-1"></div>
+</div>
+<% end %>

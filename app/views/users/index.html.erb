@@ -4,7 +4,16 @@
     <h1 class="text-center">ユーザー一覧</h1>
     <% @users.each do |user| %>
     <div class="callout">
-      <%= link_to(user.name, "/users/#{user.id}") %>
+      <div class="media-object">
+        <div class="media-object-section">
+          <div class="thumbnail">
+            <img src="<%= "/user_images/#{user.image_name}" %>" style="width: 60px;">
+          </div>
+        </div>
+        <div class="media-object-section main-section">
+          <h5 style="vertical-align: middle;"><%= link_to(user.name, "/users/#{user.id}") %></h5>
+        </div>
+      </div>
     </div>
     <% end %>
   </div>

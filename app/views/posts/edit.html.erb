@@ -1,11 +1,20 @@
 <div class="grid-x grid-padding-x">
   <div class="cell small-4"></div>
   <div class="cell small-4">
+    <h1 class="text-center">投稿編集</h1>
     <%= form_tag("/posts/#{@post.id}/update") do %>
     <% @post.errors.full_messages.each do |message| %>
-        <%= message %>
+      <div class="grid-x grid-margin-x medium-margin-collapse">
+        <div class="cell small-1"></div>
+        <div class="cell small-10">
+          <div class="callout alert">
+            <%= message %>
+          </div>
+        </div>
+        <div class="cell small-1"></div>
+      </div>
     <% end %>
-    <textarea name="content"><%= @post.content %></textarea>
+    <textarea name="content" rows="4" cols="40"><%= @post.content %></textarea>
     <input type="submit" class="button primary float-right" value="保存">
   </div>
   <div class="cell small-4"></div>
